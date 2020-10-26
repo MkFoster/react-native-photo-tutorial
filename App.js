@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StatusBar } from "expo-status-bar";
-import {
-    StyleSheet,
-    Text,
-    View,
-    SafeAreaView,
-    Button,
-    Image,
-} from "react-native";
+import { StyleSheet, View, SafeAreaView, Button, Image } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
 export default function App() {
@@ -29,6 +21,22 @@ export default function App() {
         })();
     }, []);
 
+    // New code not in the ImagePicker example:
+    useEffect(() => {
+        (async () => {
+            if (Platform.OS !== "web") {
+                const {
+                    status,
+                } = await ImagePicker.requestCameraPermissionsAsync();
+                if (status !== "granted") {
+                    alert(
+                        "Sorry, we need camera permissions to make this work!"
+                    );
+                }
+            }
+        })();
+    }, []);
+
     // From: https://docs.expo.io/versions/v39.0.0/sdk/imagepicker/
     const pickImage = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -38,8 +46,6 @@ export default function App() {
             aspect: [4, 3],
             quality: 1,
         });
-
-        console.log(result);
 
         if (!result.cancelled) {
             setImage(result.uri);
@@ -55,8 +61,6 @@ export default function App() {
             quality: 1,
         });
 
-        console.log(result);
-
         if (!result.cancelled) {
             setImage(result.uri);
         }
@@ -70,7 +74,10 @@ export default function App() {
             </View>
             <View style={styles.bodyContainer}>
                 {image && (
-                    <Image source={{ uri: image }} style={{ width: "100%" }} />
+                    <Image
+                        source={{ uri: image }}
+                        style={{ width: 200, height: 200 }}
+                    />
                 )}
             </View>
         </SafeAreaView>

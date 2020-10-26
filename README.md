@@ -52,18 +52,18 @@ Let's get start:
 
 -   Open App.js and copy/paste the following code:
 
-        `import React, { useState, useEffect } from "react";
+```import React, { useState, useEffect } from "react";
 
-    import { StatusBar } from "expo-status-bar";
-    import {
+import { StatusBar } from "expo-status-bar";
+import {
     StyleSheet,
     Text,
     View,
     SafeAreaView,
     Button,
     Image,
-    } from "react-native";
-    import \* as ImagePicker from "expo-image-picker";
+} from "react-native";
+import \* as ImagePicker from "expo-image-picker";
 
 export default function App() {
 const [image, setImage] = useState(null);
@@ -134,14 +134,14 @@ const [image, setImage] = useState(null);
 }
 
 const styles = StyleSheet.create({
-container: {
-flex: 1,
-backgroundColor: "#fff",
-alignItems: "center",
-justifyContent: "center",
-},
+    container: {
+        flex: 1,
+        backgroundColor: "#fff",
+        alignItems: "center",
+        justifyContent: "center",
+    },
 });
-`
+```
 
 ## Start and test your project! From the command line:
 
