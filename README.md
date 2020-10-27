@@ -1,5 +1,7 @@
 # Build a simple React-Native photo app in 30 minutes
 
+![React-Native Camera App Screenshot](screenshot.jpg)
+
 ## Introduction
 
 I was recently working on a React-Native project where we needed to give the user the ability to include photos from either their library or take a photo with their device camera. I wanted to build the project with the Expo "Managed workflow" so I could test it wirelessly on my device. I found ImagePicker (expo-image-picker) but until I started looking at the API reference, I didn't realize it also allow you to use the camera in addition to picking an existing photo from the device library.
@@ -13,6 +15,8 @@ To get started, we will need a React-Native project. You can follow these instru
 -   Some comfort using command-line tools.
 
 -   Install the latest version of NodeJS on your development machine. Your development machine can be Windows, Linux, or macOS even if you are developing for an iOS device!
+
+-   Make sure your mobile test device is on the same network as your development machine. Your mobile device will attempt to connect to your dev machine when you are ready to begin testing.
 
 ## Create your React Native project using Expo
 
@@ -50,7 +54,7 @@ Let's get start:
 
 ## Add code to project to support ImagePicker
 
--   Open App.js and copy/paste the following code:
+-   Open App.js and copy/paste the following code or copy the contents of App.js in this repo:
 
 ```import React, { useState, useEffect } from "react";
 
@@ -143,6 +147,29 @@ const styles = StyleSheet.create({
 });
 ```
 
-## Start and test your project! From the command line:
+## Start and test your project!
+
+-   Install the "Expo Client" app from your device's appstore.
+
+-   From a command line on your dev machine run:
 
     `expo init`
+
+-   Expo init should launch a web browser and display a QR code at the command line and in the browser. On iOS devices scan the QR with the camera app or scan the QR code with the Expo Client app on Android devices.
+
+-   If everything is working correctly, the Expo Client app should download your app from your dev machine and run it. You will be prompted to allow the app to use your camera and photo roll. Once you approve, you should see a link to start the camera and to take a photo and see it display in the app main screen or select a photo from the photo library.
+
+## How does it work?
+
+When you take a photo with the camera or select one from the library, that photo becomes available at a URI location. That URI location is stored in React state where it can be accessed by other components or passed as props. To display the image in your app, create an Image component and assign the uri to your selected image.
+
+## What's next?
+
+This is just a starting point for your photo app. You can continue to build a stand-alone app or copy/paste the code to leverage photos in your existing app.
+
+### Here are some ideas:
+
+-   Allow your users to take a photo of themselves for their avatar.
+-   Upload the photo for analysis by various services such as AWS Rekognition or Azure Custom Vision to answer questions. I.e., Are the people in the photo wearing masks for eye protection? Is the user happy or sad? Is your company logo in the photo?
+-   Allow the user add stickers to create their own meme.
+-   Add sharing features so your user can share their photo on their favorite social network.
