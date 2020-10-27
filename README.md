@@ -8,7 +8,7 @@ I was recently working on a React-Native project where we needed to give the use
 
 This tutorial will show you how to build a simple Expo Managed React-Native photo app. The app simply allows you to select a photo from your library or take a photo with the camera and then displays it on the main screen. It is intended to be a boilerplate to get you started building your own photo app.
 
-To get started, we will need a React-Native project. You can follow these instructions to set up a project or create a React-Native project using Expo or your preferred method.
+First, we will need a React-Native project. You can follow these instructions to set up a project or create a React-Native project using Expo or your preferred method.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ To get started, we will need a React-Native project. You can follow these instru
 
 ### Why Expo?
 
-Expo is a great way to get a React-Native project running on your mobile device without hard-wiring to your develop machine. Previously, if you were building a mobile application, you would have to connect a Lightning or USB cable between your development machine and your mobile device to test out your app on your mobile device. If you were developing an iOS app you would have to use a Mac running Xcode to get your app on your device. This is pretty silly considering both devices have a network connection. Expo offers an alternative.
+Expo is a great way to get a React-Native project running on your mobile device without hard-wiring to your development (dev) machine. Previously, if you were building a mobile application, you would have to connect a Lightning or USB cable between your dev machine and your mobile device to test out your app on your mobile device. If you were developing an iOS app you would have to use a Mac running Xcode to get your app on your device. This is pretty silly considering both devices have a network connection. Expo offers an alternative.
 
 ### How does Expo work?
 
@@ -54,7 +54,7 @@ Let's get start:
 
 ## Add code to project to support ImagePicker
 
--   Open App.js and copy/paste the following code or copy the contents of App.js in this repo:
+Open App.js and copy/paste the following code or copy the contents of App.js in this repo:
 
 ```import React, { useState, useEffect } from "react";
 
