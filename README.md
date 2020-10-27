@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
 
 -   From a command line on your dev machine run:
 
-    `expo init`
+    `expo start`
 
 -   Expo init should launch a web browser and display a QR code at the command line and in the browser. On iOS devices scan the QR with the camera app or scan the QR code with the Expo Client app on Android devices.
 
